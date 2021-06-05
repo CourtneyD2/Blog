@@ -41,6 +41,16 @@ const GlobalStyle = createGlobalStyle`
     --transition-vfast:   150ms;
 
   }
+  *::selection {
+    background: ${props => props.theme.colors.danger[5].CSS};
+    color: black;
+  }
+  a::selection {
+      background: ${props => props.theme.colors.info[5].CSS};
+  }
+  h1::selection {
+    text-shadow: 2px 2px ${props => props.theme.colors.info[3].CSS};;
+  }
   body, html {
     height: 100vh;
     background-color: ${props => props.theme.colors.neutral[1].CSS};

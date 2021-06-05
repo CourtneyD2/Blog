@@ -11,17 +11,15 @@ import {Box, Button, GatsbyButton} from './primatives'
  const PenAndPaper = [
     {Name: 'About'    , Link: '/PnP' },
     {Name: 'DnD'      , Link: '/PnP/DnD' },
-    {Name: 'Homebrew' , Link: '/PnP/Homebrew' },
     {Name: 'Back'     , GoTo: 'Main', direction: 'up' },
   ];
    const Programming = [
     {Name: 'About', Link: '/dev' },
-    {Name: 'Web'  , Link: '/dev' },
+    {Name: 'Web'  , Link: '/dev/web' },
     {Name: 'Back' , GoTo: 'Main', direction: 'up'},
   ];
   const gaming = [
     {Name: 'About'        , Link: '/games' },
-    {Name: 'Outriders'    , Link: '/games/Outriders' },
     {Name: 'POE'          , Link: '/games/POE' },
     {Name: 'Back'         , GoTo: 'Main'    , direction: 'up'},
   ];

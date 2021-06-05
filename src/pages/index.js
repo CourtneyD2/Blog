@@ -5,11 +5,9 @@ import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
 import { Layout } from "../components/Layout";
 import { UseSiteMetadata } from '../hooks/use-site-metadata'
-import { CSSNormalization } from '../styles/normalize'
-import Colors from '../styles/colors'
+
 import {Box, Header, Paragraph} from '../components/primatives'
 
 const CoverImg = styled(GatsbyImage)`
@@ -133,8 +131,6 @@ export default function IndexPage({ data }) {
     twitterUsername,
   } = UseSiteMetadata()
   return (
-    <ThemeProvider theme={Colors}>
-    <CSSNormalization />
     <Layout>
       {/* eslint-disable-next-line*/}
       <SEO
@@ -190,7 +186,7 @@ export default function IndexPage({ data }) {
         })}
       </IndexWrapper>
     </Layout>
-    </ThemeProvider>
+
   );
 }
 export const query = graphql`

@@ -5,7 +5,7 @@ import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome'
 
 import Logo     from '../images/logo.png'
 import { NavBar } from './navbar'
-import { Box, makeFlex }    from '../components/primatives'
+import { Box, makeFlex, ExternalLink }    from '../components/primatives'
 
 import {  faYoutube, faGithub, 
           faTwitch, faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -30,24 +30,10 @@ const LogoBlock = styled(Box)`
   min-height: 15vh; 
   background: url(${Logo}) no-repeat center left/contain; 
 `
-const SocialLink = styled.a`
+const SocialLink = styled(ExternalLink)`
   width: ${props => props.theme.column['1/4']}%;
   ${props => makeFlex}
   font-size: 1.5rem;
-  color: ${props => props.theme.colors.danger[5].CSS};
-
-  &:link {
-    color: ${props => props.theme.colors.danger[5].CSS};
-  }
-  &:visited {
-     color: ${props => props.theme.colors.danger[4].CSS};
-  }
-  &:hover {
-    color: ${props => props.theme.colors.danger[6].CSS};
-  }
-  &:active {
-    color: ${props => props.theme.colors.danger[2].CSS};
-  }
   ${props => props.theme.media.xs}{
     width:        ${props => props.theme.column['1/2']}%;    
     margin-top:   ${props => props.theme.spacing.base}rem;
@@ -91,7 +77,7 @@ export const Header = ({ siteTitle, siteDescription }) => {
           <LogoLink to="/"><LogoBlock /></LogoLink>
           <SocialContainer>
               {social.map((item, index) => {
-                return  <SocialLink key={index} href= {item.URL}  >
+                return  <SocialLink variant='danger' key={index} href= {item.URL}  >
                           <FontAwesomeIcon icon={item.Icon} />{''}
                         </SocialLink>
                 })

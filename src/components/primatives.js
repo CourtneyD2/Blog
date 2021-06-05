@@ -136,7 +136,38 @@ export const Line = styled.hr`
   width: 100%;
   ${props => props.variant && `border-color: ${props.theme.colors[props.variant][5].CSS}`}
 `
+export const ExternalLink = styled.a`
+  color: ${props => props.theme.colors[props.variant][5].CSS};
 
+  &:link {
+    color: ${props => props.theme.colors[props.variant][5].CSS};
+  }
+  &:visited {
+     color: ${props => props.theme.colors[props.variant][4].CSS};
+  }
+  &:hover {
+    color: ${props => props.theme.colors[props.variant][6].CSS};
+  }
+  &:active {
+    color: ${props => props.theme.colors[props.variant][2].CSS};
+  }
+`
+export const GatsbyStyledLink = styled(Link)`
+  color: ${props => props.theme.colors[props.variant][5].CSS};
+
+  &:link {
+    color: ${props => props.theme.colors[props.variant][5].CSS};
+  }
+  &:visited {
+     color: ${props => props.theme.colors[props.variant][4].CSS};
+  }
+  &:hover {
+    color: ${props => props.theme.colors[props.variant][6].CSS};
+  }
+  &:active {
+    color: ${props => props.theme.colors[props.variant][2].CSS};
+  }
+`
 
 const getForground = (v, t, type) => {
   if (v) return getcontrastcolor(t.colors[v][5])

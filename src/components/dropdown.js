@@ -32,7 +32,7 @@ const DropDownButton = styled(Button)`
     transform:            scale(1.02) skew(-15deg, 0deg);
 
   }
-  
+
   &:hover, &:focus {transform: scale(1.02) skew(-15deg, 0deg);}
 
 `
@@ -103,13 +103,14 @@ const baseMenuItem = css`
 
 const MenuText = styled.div`
   ${props => baseMenuItem}
+    cursor:     pointer;
 `
 
 const MenuButton = styled(Button)`
   ${props => baseMenuItem}
   position: relative;
   padding: 0;
-
+  cursor:     pointer;
   & > * {
     pointer-events: none;
   }
