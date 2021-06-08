@@ -1,16 +1,70 @@
-import React from "react";
-import { Link } from "gatsby";
-import styled , { css } from 'styled-components';
-import { Layout } from "../../../components/Layout";
-import { Header, Box, Paragraph } from '../../../components/primatives'
+import React from 'react'
+import SEO from 'react-seo-component'; 
 
-export default function WebDevPage() {
+import {  graphql } from "gatsby";
+
+import {  UseSiteMetadata } from '../../../hooks/use-site-metadata'
+
+
+import {  Layout  } from "../../../components/Layout";
+import PostSections from '../../../components/postSections'
+
+export default function POEIndexPage({ data }) {
+  const { description     ,   
+          title           ,  
+          image           ,  
+          siteUrl         ,
+          siteLanguage    ,   
+          siteLocale      ,  
+          twitterUsername ,
+        } = UseSiteMetadata()
   return (
-   <Layout>
-      
-
-
-
-
-  </Layout>)
+    <Layout>
+      {/* eslint-disable-next-line*/}
+      <SEO
+        title           = { title                     }
+        description     = { description || `nothin’`  }
+        image           = { `${siteUrl}${image}`      }
+        pathname        = { siteUrl                   }
+        siteLanguage    = { siteLanguage              }
+        siteLocale      = { siteLocale                }
+        twitterUsername = { twitterUsername           }
+      />
+      <PostSections data={data} />
+    </Layout>
+  );
 }
+export const query = graphql`
+query getWebBlogPosts {
+  allMdx(
+    sort: {fields: frontmatter___date, order: DESC}
+    filter: {frontmatter: {sub_category: {eq: "Web"}}}
+  ) {
+    nodes {
+      id
+      excerpt(pruneLength: 140)
+      fields {
+        slug
+      }
+      frontmatter {
+        date(formatString: "YYYY-MM-Do")
+        title
+        tag
+        cover {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(
+              width: 200
+              height: 300
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+      }
+    }
+  }
+}
+
+
+`;

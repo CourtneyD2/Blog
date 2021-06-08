@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "gatsby";
 import styled , { css } from 'styled-components';
 import {HSLToRGB} from '../utils/colorTypeConverter'
@@ -13,6 +12,7 @@ const prepareButton = css`
   min-width:  64px;
   min height: 1rem;
   padding: 0.5rem 1rem;
+  cursor: pointer;
   outline: none;
   border: none;
   transition: transform 150ms ease, box-shadow: 150ms ease ;
@@ -37,7 +37,7 @@ const prepareButton = css`
     box-shadow: var(--all-shadows);
   }
 `
-const textFlow = css`
+export const textFlow = css`
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: break-all;
@@ -47,7 +47,6 @@ const textFlow = css`
   -webkit-hyphens: auto;
   hyphens: auto;
 `
-
 const outlineButton = css`
   border: 2px solid ${props => props.bg_color[5].CSS} ; 
   background-color: ${props => props.theme.colors.main_bg.CSS};  
@@ -79,8 +78,8 @@ export const Header = styled.h1`
   ${props=>textFlow}
   margin: 0 auto;
   margin-bottom: 1rem;
-  font-size: clamp(1rem, 2.5vmin ,2rem);
-  line-height: clamp(1rem, 2.5vmin ,2rem);
+  font-size: clamp(1.5rem, 3vmin , 3rem);
+  line-height: clamp(1.5rem, 3vmin , 3rem);
 `
 export const Paragraph = styled.p`
   ${props=>textFlow}

@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from 'styled-components';
 import DropDown, {DropDownMenu} from './dropdown'
-import {Box, Button, GatsbyButton} from './primatives'
+import {Box, GatsbyButton} from './primatives'
   const Content = [
     {Name: 'Gaming' , GoTo: 'Gaming', direction: 'down' },
     {Name: 'Coding' , GoTo: 'Coding', direction: 'down' },
@@ -45,16 +44,6 @@ import {Box, Button, GatsbyButton} from './primatives'
     programmingMenu, 
     gamingMenu
   ]
-
-const fontSizes = {
-  unit:    'rem',
-  xSmall:   0.5,
-  Small:    0.75,
-  Normal:   1.0,
-  Large:    1.5,
-  xLarge:   2.0,
-  hero:     3.0,
-}
 
 const StyleNav = styled(Box)`
   justify-content: space-between;

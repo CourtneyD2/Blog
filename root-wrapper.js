@@ -59,7 +59,6 @@ const GlobalStyle = createGlobalStyle`
   }`
 
 export const rootWrapper = ({ element }) => {
-  console.log(TransTheme)
 return (
   <ThemeProvider theme={TransTheme}>
     <CSSNormalization />

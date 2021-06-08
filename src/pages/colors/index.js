@@ -1,6 +1,4 @@
 import React from "react";
-import SEO from 'react-seo-component'; 
-
 import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import { Layout } from "../../components/Layout";

@@ -1,29 +1,25 @@
 import React from "react";
-import { Link } from "gatsby";
-import styled , { css } from 'styled-components';
+import styled  from 'styled-components';
 import { Layout } from "../../components/Layout";
-import { Header, Box, Paragraph, ExternalLink, GatsbyStyledLink } from '../../components/primatives'
+import { Header, Box, Paragraph, GatsbyStyledLink } from '../../components/primatives'
 import illy from '../../images/illy.jpg'
 
 const AboutTitle = styled(Header)`
-
-margin: 0.5rem 0;
-font-size: clamp(2.5rem, 5vmin ,5rem);
-line-height: clamp(2.5rem, 5vmin ,5rem);
-   
+margin:       0.5rem 0;
+font-size:    clamp(2.5rem, 5vmin ,5rem);
+line-height:  clamp(2.5rem, 5vmin ,5rem);
 `
 const Subtitle = styled(Header)`
-
-margin: 0;
-font-size: clamp(0.75rem, 1.5vmin ,1.5rem);
-line-height: clamp(0.75rem, 1.5vmin ,1.5rem);
-width: 100%;
-text-align: right; 
+margin:       0;
+font-size:    clamp(0.75rem, 1.5vmin ,1.5rem);
+line-height:  clamp(0.75rem, 1.5vmin ,1.5rem);
+width:        100%;
+text-align:   right; 
 `
 const AboutContainer = styled(Box)`
   flex-drectiion: row;
-  padding: none;
-  min-width: 20em;
+  padding:        none;
+  min-width:      20em;
 `
 
 const AboutImage = styled.img`
@@ -94,7 +90,7 @@ export default function AboutPage(props) {
   return  <Layout>
             <AboutContainer>
               <AboutImage 
-                src={illy} 
+                src={illy} alt='profile image'
             />
             <AboutInfoContainer>
               <TitleContainer>

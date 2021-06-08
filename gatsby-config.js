@@ -1,11 +1,11 @@
  const siteMetadata = {
   title: `CourtsDawn`,
-  description: `Includes a blog and professional portfolio`,
+  description: `A resource for anyone who shares interest in Video Games, RPGs, and Coding. Content for Path of Exile, Outriders, Dungeons and Dragons, JS, Java and more`,
   lastBuildDate: new Date(Date.now()).toISOString(),
-  siteUrl: `https://dummy-url-for-now.com`,
+  siteUrl: `https://www.courtsdawn.com/`,
   image: `/default-site-image.jpg`,
-  authorName: `Cameron Pelkey`,
-  twitterUsername: `@authorOfPosts`,
+  authorName: `Courtney Pelkey`,
+  twitterUsername: `@courts_dawn`,
   siteLanguage: `en-CA`,
   siteLocale: `en_gb`,
   }

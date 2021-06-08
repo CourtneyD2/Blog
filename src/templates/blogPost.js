@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { graphql, Link} from "gatsby";
+import { graphql} from "gatsby";
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 

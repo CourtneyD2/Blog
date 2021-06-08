@@ -1,13 +1,10 @@
 import React, {useState, useRef, useEffect} from 'react'
 import { CSSTransition } from 'react-transition-group';
 
-import { Link, navigate } from "gatsby";
+import { navigate } from "gatsby";
 import styled,  { css } from 'styled-components';
 import {Box, Button, GatsbyButton, textFlow} from './primatives'
-  // transform: skew(-15deg, 0deg);
-  // transform-origin: 0 50%;
-  // transform: skew(15deg, 0deg);
-  // transform-origin: 0 0;
+
 const DropDownContainer = styled(Box)`
   width:    ${props => props.width};
   height:   ${props => props.height};
@@ -22,7 +19,7 @@ const DropDownButton = styled(Button)`
   left:       0;
   cursor:     pointer;
   z-index:    200;  
-  transform: skew(-15deg, 0deg);
+  transform:  skew(-15deg, 0deg);
 
   &.open  {
     --shadow:             0 0 0.75rem -0.01rem rgba(0,0,0,0.5);
@@ -154,6 +151,7 @@ export default function DropDown(props) {
   )
   const M = Menus[selection.selectedMenu[selection.selectedMenu.length-1]];
   const MN = M.Name;
+
   function findMenu (currentMenu, target) {
     const itemContents = currentMenu.contents[target];
     if (itemContents.GoTo)
@@ -304,15 +302,21 @@ function DropDownItem(props){
       
       {props.item.GoTo 
         ?<MenuButton 
-            variant     = {props.variant}
-            type        = {props.type}
-            tabIndex={props.tabIndex} 
-            value={props.index}
-            onClick={props.buttonclick}
-            className={props.infocus ? 'focus': ''}>
-            <MenuIcon>{props.leftIcon}</MenuIcon>
-            <MenuIcon>{props.item.Name}</MenuIcon>
-            <MenuIcon>{props.rightIcon}</MenuIcon>
+            variant     = { props.variant              }
+            type        = { props.type                 }
+            tabIndex    = { props.tabIndex             } 
+            value       = { props.index                }
+            onClick     = { props.buttonclick          }
+            className   = { props.infocus ? 'focus': ''}>
+            <MenuIcon>  
+              { props.leftIcon}
+            </MenuIcon>
+            <MenuIcon>  
+              { props.item.Name}
+            </MenuIcon>
+            <MenuIcon>  
+              { props.rightIcon}
+            </MenuIcon>
           </MenuButton> 
         : (props.item.Link 
             ? <MenuLink 
@@ -377,11 +381,11 @@ export function DropDownMenu(props) {
       {Menus.map((Menu, menuIndex) => {
         return (
           <CSSTransition
-          key         = {menuIndex} 
-          in          = {selectedMenu[selectedMenu.length-1] === menuIndex}  
-          timeout     = {500} 
-          classNames  = {getDirection(menuIndex)} 
-          onEnter     = {calcHeight}
+          key         = { menuIndex               }           
+          timeout     = { 500                     } 
+          classNames  = { getDirection(menuIndex) } 
+          onEnter     = { calcHeight              }
+          in          = { selectedMenu[selectedMenu.length-1] === menuIndex}  
           unmountOnExit
           >
             <DropDownMenuList>
