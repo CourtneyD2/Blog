@@ -1,32 +1,13 @@
-import React from 'react'
-import SEO from 'react-seo-component'; 
-import styled  from 'styled-components';
-import {  graphql, Link } from "gatsby";
+import React        from 'react'
+import SEO          from 'react-seo-component' 
+import {  graphql } from 'gatsby'
 
 import {  UseSiteMetadata } from '../../hooks/use-site-metadata'
-import {  Box, GatsbyStyledLink, Header } from '../../components/primatives'
-import {  Layout  } from "../../components/Layout";
-import PostSections from '../../components/postSections'
-import poeLogo from '../../images/POE/poeLogo.png'
-
-const GameImage = styled.img`
-  object-fit: contain;
- `
-
-const FeaturedHeader = styled(Header)`
-  width: 100%;
-  text-align: center;
-`
-const FeaturedWrapper = styled(Box)`
-
-  padding: 0;
-  justify-content: center;
-  margin-bottom: 4rem;
-`
-const FeaturedLink = styled(GatsbyStyledLink)`
-
-  width: 25%;
-`
+import {  Header          } from '../../components/primatives'
+import {  Layout          } from '../../components/Layout'
+import {  Featured        } from '../../components/featured'
+import PostSections         from '../../components/postSections'
+import poeLogo              from '../../images/POE/poeLogo.png'
 
 export default function GamesIndexPage({ data }) {
   const { description     ,   
@@ -50,20 +31,9 @@ export default function GamesIndexPage({ data }) {
         siteLocale      = { siteLocale                }
         twitterUsername = { twitterUsername           }
       />
-      <FeaturedWrapper >
-        <FeaturedHeader> FEATURED GAMES</FeaturedHeader>
-        {featured.map ((item) =>  <FeaturedLink
-                                    key={item.game} 
-                                    type='text' 
-                                    variant = 'primary' 
-                                    to  = {item.game}>     
-                                    <GameImage src={item.img}></GameImage> 
-                                  </FeaturedLink>
-                              
-        )}
-      </FeaturedWrapper>
-      
-      <Header>Recent Posts</Header>
+      <Featured featured = {featured} title = 'FEATURED GAMES' />
+
+      <Header>Posts</Header>
       
       <PostSections data={data} />
 

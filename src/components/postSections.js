@@ -11,9 +11,7 @@ const IndexWrapper = styled(Box)`
   padding: 0;
   align-items: stretch;
 `
-const changePostButton = styled(Button)`
-  font-size = 1rem;
-`
+
 const createSections = (allPosts, maxPostsPer, maxSections) => {
   let sections = []
   for ( let i = 1; i  <=  maxSections; i++  ) {    
@@ -63,14 +61,16 @@ export default function PostSections({ data }) {
   return (
     <IndexWrapper>    
         {sections[currentSection-1]}
+        <Box>
         <Button style ={{fontSize:'1.5rem'}}
           onClick = { updateSection } 
           value   = 'back'
           type    = 'text'
           variant = 'info'>
-                            <FontAwesomeIcon style={{pointerEvents: 'none'}}
-                    icon={faCaretSquareLeft} 
-                  /> back
+            <FontAwesomeIcon 
+              style = { { pointerEvents: 'none' } }
+              icon  = { faCaretSquareLeft } 
+            /> back
         </Button>
         <span style={{margin: '1rem', fontSize:'1.5rem'}}>{`${currentSection} / ${maxSections}`}</span>
         <Button style ={{fontSize:'1.5rem'}}
@@ -78,10 +78,12 @@ export default function PostSections({ data }) {
           value   = 'forward'
           type    = 'text'
           variant = 'info'>
-                       next     <FontAwesomeIcon style={{pointerEvents: 'none'}}
-                    icon={faCaretSquareRight} 
-                  /> 
+            next <FontAwesomeIcon 
+              style = { { pointerEvents: 'none' } }
+              icon  = { faCaretSquareRight  } 
+            /> 
         </Button>
+        </Box>
       </IndexWrapper>
   );
 }

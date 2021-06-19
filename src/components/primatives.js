@@ -66,7 +66,7 @@ const buttonButton = css`
   }
 `
 const textButton = css`
-  background-color: ${props => props.theme.colors.main_bg.CSS}; 
+  background-color: transparent; 
   color:            ${props => props.bg_color[5].CSS};
 
   &:focus, &:hover {

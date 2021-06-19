@@ -192,8 +192,8 @@ export default function DropDown(props) {
 
   useEffect(() => {
     function handleAction(event) {
-      const clickOutside = (wrapperRef.current && !wrapperRef.current.contains(event.target));
-      const closeButton = (event.keyCode === 27 || event.keyCode === 9);
+      const clickOutside  = ( wrapperRef.current && !wrapperRef.current.contains(event.target));
+      const closeButton   = ( event.keyCode === 27 || event.keyCode === 9);
 
       if (clickOutside || closeButton){
         setFocus(false);
@@ -214,9 +214,9 @@ export default function DropDown(props) {
   return (
   <DropDownContainer ref={wrapperRef} width= {props.width} height= {props.height} >
     <DropDownButton 
-      variant = {props.variant}
-      type = {props.type}
-      className={open && 'open'}
+      variant   = { props.variant}
+      type      = { props.type}
+      className = { open && 'open'}
       onClick   = {() => {setOpen(!open); resetSelection()}} 
       onKeyDown = {(e) => {
         const Menu = Menus[selection.selectedMenu[selection.selectedMenu.length-1]];
@@ -320,11 +320,11 @@ function DropDownItem(props){
           </MenuButton> 
         : (props.item.Link 
             ? <MenuLink 
-                     variant     = {props.variant}
-                type        = {props.type}
-                tabIndex={props.tabIndex}  
-                to={props.item.Link}  
-                className={props.infocus ? 'focus': ''}>
+                variant     = { props.variant}
+                type        = { props.type}
+                tabIndex    = { props.tabIndex}  
+                to          = { props.item.Link}  
+                className   = { props.infocus ? 'focus': ''}>
             <MenuIcon>{props.leftIcon}</MenuIcon>
             <MenuIcon>{props.item.Name}</MenuIcon>
             <MenuIcon>{props.rightIcon}</MenuIcon>
