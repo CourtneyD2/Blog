@@ -1,7 +1,8 @@
-import React from "react";
-import styled from 'styled-components';
+import React  from 'react'
+import styled from 'styled-components'
 import DropDown, {DropDownMenu} from './dropdown'
-import {Box, GatsbyButton} from './primatives'
+import {Box, GatsbyButton}      from './primatives'
+
   const Content = [
     {Name: 'Gaming' , GoTo: 'Gaming', direction: 'down' },
     {Name: 'Coding' , GoTo: 'Coding', direction: 'down' },
@@ -46,50 +47,39 @@ import {Box, GatsbyButton} from './primatives'
   ]
 
 const StyleNav = styled(Box)`
-  justify-content: space-between;
-  align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;    
-  z-index: 20;
+  justify-content:  space-between;
+  align-items:      center;
+  position:         -webkit-sticky;
+  position:         sticky;
+  top:              0;    
+  z-index:          20;
 `
-
 const NavLink = styled(GatsbyButton)`
-  width:  30%;
-  height: 2.5rem;
+  width:            30%;
+  height:           2.5rem;  
+  line-height:      2.25rem;
+  border-radius:    0;  
+  position:         relative;
+  display:          flex;
+  justify-content:  center;
+  align-items:      center;
+  transform:        skew(-15deg, 0deg);
+
+  &:first-child {border-radius: 0.5rem 0rem 0rem 0.5rem;}
   
-  line-height: 2.25rem;
-  border-radius: 0;  
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    transform: skew(-15deg, 0deg);
+  &:last-child  {border-radius: 0rem 0.5rem 0.5rem 0rem;}
 
-  &:first-child {
-    border-radius: 0.5rem 0rem 0rem 0.5rem;
-
-  }
-  &:last-child {
-    border-radius: 0rem 0.5rem 0.5rem 0rem;
-  }
-  &:hover, &:focus {
-    transform: scale(1.02) skew(-15deg, 0deg);
-
-  }
-
+  &:hover, &:focus {transform: scale(1.02) skew(-15deg, 0deg);}
 `
-
-
 export const NavBar = (props) => {
    
   return (
    
-    <StyleNav as='nav'>
+    <StyleNav as = 'nav'>
       <NavLink 
-        to= '/'
+        to      = '/'
         variant = 'info'
-        type = 'button'
+        type    = 'button'
       >
         Home
       </NavLink>
@@ -99,20 +89,19 @@ export const NavBar = (props) => {
         variant = 'info'
         type    = 'button' 
         Name    = 'Content'
-        Menus   = {Menus}>
+        Menus   = { Menus }>
           <DropDownMenu
-                    variant = 'info'
-                    type    = 'button' 
+            variant = 'info'
+            type    = 'button' 
             height  = '2.5rem'>
-            </DropDownMenu>
+          </DropDownMenu>
       </DropDown> 
       <NavLink 
-        to= '/about'
+        to      = '/about'
         variant = 'info'
-        type = 'button'
-      >
-        About
+        type    = 'button'>
+          About
       </NavLink>
     </StyleNav>
-  );
+  )
 }

@@ -1,15 +1,17 @@
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/okaidia';
-import React from 'react';
+import React  from 'react'
+import theme  from 'prism-react-renderer/themes/okaidia'
+import styled from 'styled-components'
+
+import Highlight, { defaultProps } from 'prism-react-renderer'
 import {
   LiveEditor,
   LiveError,
   LivePreview,
   LiveProvider,
-} from 'react-live';
-import styled from 'styled-components';
-import { copyToClipboard } from '../utils/copy-to-clipboard';
-import {Button} from './primatives' 
+} from 'react-live'
+
+import {  copyToClipboard } from '../utils/copy-to-clipboard';
+import {  Button          } from './primatives' 
 
 /*
   A compenent for helping format and display code blocks

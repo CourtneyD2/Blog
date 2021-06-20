@@ -11,27 +11,33 @@ const ListSectionUL = styled.ul`
   padding: 0;
   margin: 0;
   & li {
-    margin: 1rem;
+    margin: 0;
+    ${props => props.theme.media.sm}{
+      margin: 2rem;
+    }
   }
 `
 const SubSectionUL = styled.ul`
   list-style-type: none;
   font-size: clamp(1rem, 3vmin , 3rem);
   line-height: clamp(1.25rem, 3vmin , 3rem);
+  margin: 0;
+  padding-left: 1rem;
 
-
-  & li {
-    padding: 0;
+  & li {    
+    padding-left: 1rem;
     margin: 0;
-    margin-left: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    ${props => props.theme.media.sm}{
+      margin-left: 2rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+    }
   }
 `
 
 const ListContainer = styled(Box)`
-  justify-content: flex-start;  
-  padding: 0;
+  justify-content:  flex-start;  
+  padding:          0;
 `
 
 

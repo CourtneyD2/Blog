@@ -1,15 +1,15 @@
-import React from "react";
-import styled from 'styled-components';
+import React  from 'react'
+import styled from 'styled-components'
 
-import { UseSiteMetadata } from "../hooks/use-site-metadata";
-
-import { Header } from "./header";
-import {Box} from './primatives'
+import {  UseSiteMetadata } from '../hooks/use-site-metadata'
+import {  Header          } from './header'
+import {  Box             } from './primatives'
 
 const Outer = styled(Box)`
   padding: 0;
+
   ${props => props.theme.media.md}{
-    padding:        ${props => props.theme.spacing.base*2.5}rem;
+    padding: ${props => props.theme.spacing.base*2.5}rem;
   }
 `
 
@@ -30,14 +30,13 @@ const LayoutBox= styled(Box)`
 const Main = styled(Box)`
   flex-direction: column-reverse;
   flex-wrap:      nowrap;
-  align-items: stretch;
+  align-items:    stretch;
   
-  ${props => props.theme.media.md}{
-   
-  }
+  ${props => props.theme.media.md}{}
 `
 const PostSection = styled(Box)`  
   border-radius: ${props => props.theme.borderRadius.md};
+
   ${props => props.theme.media.md}{
     margin-right: ${props => props.theme.spacing.base*0.5}rem;
 
@@ -45,26 +44,26 @@ const PostSection = styled(Box)`
 
 `
 const SideBar = styled(Box)`
-  border-radius: ${props => props.theme.borderRadius.md};
-  box-shadow: ${props => props.theme.boxShadows.xs};
-  padding: 0;
-  margin-top: 1rem;
-
+  border-radius:  ${props => props.theme.borderRadius.md};
+  box-shadow:     ${props => props.theme.boxShadows.xs};
+  padding:        0;
+  margin-top:     1rem;
 `
-
 const Footer = styled(Box)`justify-content: center;`
 
-export const Layout = ({ children }) => {
+export const Layout = (  {  children }  ) => {
   const { title, description } = UseSiteMetadata();
   return (
     <Outer>
-    <LayoutBox  >
-      <Header siteTitle={title} siteDescription={description} />
-      <Main as='main'>
-        <PostSection as='section'>{children}</PostSection>
-        <SideBar as='section'></SideBar>
+    <LayoutBox>
+      <Header 
+        siteTitle       = {  title       } 
+        siteDescription = {  description } />
+      <Main as  = 'main'>
+        <PostSection as = 'section'>{  children  }</PostSection>
+        <SideBar as = 'section'></SideBar>
       </Main>
-      <Footer as='footer'>Copyright 2014</Footer>
+      <Footer as = 'footer'>  Copyright 2014  </Footer>
     </LayoutBox>  
     </Outer>
   );

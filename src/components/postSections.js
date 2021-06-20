@@ -1,18 +1,18 @@
 import React, { useState  } from 'react'
+import styled               from 'styled-components';
 
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretSquareLeft, faCaretSquareRight } from '@fortawesome/free-solid-svg-icons'
+import {  FontAwesomeIcon                       }  from '@fortawesome/react-fontawesome'
+import {  faCaretSquareLeft, faCaretSquareRight }  from '@fortawesome/free-solid-svg-icons'
 
-import {  Box, Button } from '../components/primatives'
-import  Post  from '../components/post'
+import {  Box, Button  }  from '../components/primatives'
+import  Post              from '../components/post'
 
 const IndexWrapper = styled(Box)`
-  padding: 0;
-  align-items: stretch;
+  padding:      0;
+  align-items:  stretch;
 `
 
-const createSections = (allPosts, maxPostsPer, maxSections) => {
+const createSections = (  allPosts, maxPostsPer, maxSections  ) => {
   let sections = []
   for ( let i = 1; i  <=  maxSections; i++  ) {    
     const set = allPosts.filter (

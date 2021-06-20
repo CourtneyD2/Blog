@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import styled from 'styled-components';
-
+import React  from 'react'
+import styled from 'styled-components'
+import {  Link                    } from 'gatsby'
+import {  GatsbyImage, getImage   } from 'gatsby-plugin-image'
 import {  Box, Header, Paragraph  } from '../components/primatives'
 
 const CoverImg = styled(GatsbyImage)` border-radius: 0.5rem 0rem 0rem 0.5rem; `;
@@ -52,7 +51,7 @@ const PostWrapper = styled(Box)`
 
   &.slide-exit-active {
     transition: opacity 300ms;
-    opacity: 0;
+    opacity:    0;
   }  
 `;
 
