@@ -214,9 +214,10 @@ export default function DropDown(props) {
   return (
   <DropDownContainer ref={wrapperRef} width= {props.width} height= {props.height} >
     <DropDownButton 
-      variant   = { props.variant}
-      type      = { props.type}
-      className = { open && 'open'}
+      variant   = { props.variant   } 
+      type      = { props.type      }
+      styleType = { props.styleType }
+      className = { open && 'open'  }
       onClick   = {() => {setOpen(!open); resetSelection()}} 
       onKeyDown = {(e) => {
         const Menu = Menus[selection.selectedMenu[selection.selectedMenu.length-1]];
@@ -304,6 +305,7 @@ function DropDownItem(props){
         ?<MenuButton 
             variant     = { props.variant              }
             type        = { props.type                 }
+            styleType   = { props.styleType            }
             tabIndex    = { props.tabIndex             } 
             value       = { props.index                }
             onClick     = { props.buttonclick          }
@@ -319,15 +321,16 @@ function DropDownItem(props){
             </MenuIcon>
           </MenuButton> 
         : (props.item.Link 
-            ? <MenuLink 
+            ? <MenuLink paintDrip direction='down' hex='#55CDFC' duration={0.65}
                 variant     = { props.variant}
-                type        = { props.type}
+                type        = { props.type  }
+                styleType   = { props.styleType  }
                 tabIndex    = { props.tabIndex}  
                 to          = { props.item.Link}  
                 className   = { props.infocus ? 'focus': ''}>
-            <MenuIcon>{props.leftIcon}</MenuIcon>
-            <MenuIcon>{props.item.Name}</MenuIcon>
-            <MenuIcon>{props.rightIcon}</MenuIcon>
+            <MenuIcon>{ props.leftIcon  }</MenuIcon>
+            <MenuIcon>{ props.item.Name }</MenuIcon>
+            <MenuIcon>{ props.rightIcon }</MenuIcon>
               </MenuLink> 
             : <MenuText>
                             <MenuIcon>{props.leftIcon}</MenuIcon>
@@ -395,6 +398,7 @@ export function DropDownMenu(props) {
                     height      = {props.height}
                     variant     = {props.variant}
                     type        = {props.type}
+                    styleType   = {props.styleType}
                     key         = {itemIndex}
                     index       = {itemIndex}
                     infocus     = {selectedItem === itemIndex && focus}                   

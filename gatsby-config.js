@@ -12,13 +12,14 @@
 
 module.exports = {
  siteMetadata,
-  plugins: [
+  plugins: [   
    `gatsby-plugin-styled-components`,
    `gatsby-plugin-fontawesome-css`,
    `gatsby-plugin-react-helmet`,
    `gatsby-plugin-image`,
    `gatsby-transformer-sharp`,
    `gatsby-plugin-sharp`,
+   `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {

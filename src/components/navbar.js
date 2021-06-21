@@ -76,10 +76,11 @@ export const NavBar = (props) => {
   return (
    
     <StyleNav as = 'nav'>
-      <NavLink 
+      <NavLink cover direction='down' bg='#55CDFC'
         to      = '/'
         variant = 'info'
         type    = 'button'
+        styleType = 'button'
       >
         Home
       </NavLink>
@@ -88,18 +89,21 @@ export const NavBar = (props) => {
         height  = '2.5rem'
         variant = 'info'
         type    = 'button' 
+        styleType = 'button'
         Name    = 'Content'
         Menus   = { Menus }>
           <DropDownMenu
             variant = 'info'
             type    = 'button' 
+            styleType = 'button'
             height  = '2.5rem'>
           </DropDownMenu>
       </DropDown> 
-      <NavLink 
+      <NavLink cover direction='up' bg='#55CDFC'
         to      = '/about'
         variant = 'info'
-        type    = 'button'>
+        type    = 'button'
+        styleType = 'button'>        
           About
       </NavLink>
     </StyleNav>

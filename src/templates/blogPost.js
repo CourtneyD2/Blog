@@ -3,7 +3,7 @@ import styled                     from 'styled-components'
 import {  graphql               } from 'gatsby'
 import {  MDXRenderer           } from 'gatsby-plugin-mdx'
 import {  GatsbyImage, getImage } from 'gatsby-plugin-image'
-
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import {  FontAwesomeIcon                       } from '@fortawesome/react-fontawesome'
 import {  faCaretSquareLeft, faCaretSquareRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -101,8 +101,9 @@ export default function postTemplate (  { data, pageContext } ) {
           <>
             { previous 
             && (
-              <FooterButton 
+              <FooterButton  cover direction='left' bg='#55CDFC'
                 type    = 'text'
+                styleType = 'text'
                 variant = 'info'
                 to      = {  previous.fields.slug  }>
                 <p>
@@ -118,10 +119,11 @@ export default function postTemplate (  { data, pageContext } ) {
           <>
             { next 
               && (
-                <FooterButton 
+                <FooterButton cover direction='right' bg='#55CDFC'
                   //`/${BLOG_SECTION}${next.fields.slug}`
                   to      = {  next.fields.slug  }
                   type    = 'text'
+                  styleType = 'text'
                   variant = 'info'
                 >
                 <p>

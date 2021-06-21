@@ -66,6 +66,7 @@ export default function PostSections({ data }) {
           onClick = { updateSection } 
           value   = 'back'
           type    = 'text'
+          styleType = 'text'
           variant = 'info'>
             <FontAwesomeIcon 
               style = { { pointerEvents: 'none' } }
@@ -74,13 +75,14 @@ export default function PostSections({ data }) {
         </Button>
         <span style={{margin: '1rem', fontSize:'1.5rem'}}>{`${currentSection} / ${maxSections}`}</span>
         <Button style ={{fontSize:'1.5rem'}}
-          onClick = { updateSection } 
-          value   = 'forward'
-          type    = 'text'
-          variant = 'info'>
+          onClick   = {  updateSection  } 
+          value     = 'forward'
+          type      = 'text'
+          styleType = 'text'
+          variant   = 'info'>
             next <FontAwesomeIcon 
-              style = { { pointerEvents: 'none' } }
-              icon  = { faCaretSquareRight  } 
+              style = {  {  pointerEvents: 'none'  }  }
+              icon  = {  faCaretSquareRight  } 
             /> 
         </Button>
         </Box>

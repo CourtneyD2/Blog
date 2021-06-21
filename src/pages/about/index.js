@@ -105,13 +105,13 @@ export default function AboutPage(props) {
                 <AboutText 
                   style = { { justifySelf: 'left', margin: '0 0', borderLeft: 'none'  } }>
                   Having played <span> </span>
-                  <GatsbyStyledLink 
+                  <GatsbyStyledLink paintDrip direction='down' hex='#55CDFC' duration={0.65}
                     variant ='danger' 
                     to      ='/PnP'>
                     pen and paper
                   </GatsbyStyledLink> 
                   <span> </span>games for over 20 years now, starting with <span> </span>
-                  <GatsbyStyledLink 
+                  <GatsbyStyledLink paintDrip direction='down' hex='#55CDFC' duration={0.65}
                     variant = 'danger' 
                     to      = '/PnP/DnD'>
                     Dungeons and Dragons
@@ -124,13 +124,13 @@ export default function AboutPage(props) {
                   <AboutText 
                     style = { { justifySelf: 'flex-end', margin: '0 0', borderRight: 'none' } }>
                     As an avid gamer I have played many a <span> </span>
-                    <GatsbyStyledLink 
+                    <GatsbyStyledLink paintDrip direction='down' hex='#55CDFC' duration={0.65}
                       variant ='danger' 
                       to      ='/PnP'>
                       games
                     </GatsbyStyledLink> 
                     <span> </span>over the years but by far my favorite and most played is<span> </span> 
-                    <GatsbyStyledLink 
+                    <GatsbyStyledLink paintDrip direction='down' hex='#55CDFC' duration={0.65}
                       variant ='danger' 
                       to      ='/games/POE'>
                       Path of Exile
@@ -143,13 +143,13 @@ export default function AboutPage(props) {
                   <AboutText 
                     style = { { justifySelf: 'flex-start', margin: '0 0',  borderLeft: 'none' } }>
                     I am a hobyist and educational<span> </span>
-                    <GatsbyStyledLink 
+                    <GatsbyStyledLink paintDrip direction='down' hex='#55CDFC' duration={0.65}
                       variant = 'danger' 
                       to      = '/PnP'>
                      developer
                     </GatsbyStyledLink>
                     , I have been both self and formally taught different aspects of the developer world. Be it<span> </span>
-                    <GatsbyStyledLink 
+                    <GatsbyStyledLink paintDrip direction='down' hex='#55CDFC' duration={0.65}
                       variant = 'danger' 
                       to      = '/games/POE'> 
                       website

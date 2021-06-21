@@ -1,7 +1,6 @@
 import {  Link  }         from "gatsby";
-
 import styled , {  css  } from 'styled-components';
-
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import {  HSLToRGB  }     from '../utils/colorTypeConverter'
 
 export const makeFlex = css`
@@ -87,8 +86,8 @@ export const Header = styled.h1`
 export const Paragraph = styled.p`
   ${props=>textFlow}
   margin:       0 ;
-  font-size:    clamp(1rem, 1.5vmin , 1.25rem);
-  line-height:  clamp(1rem, 2vmin ,1.25rem);
+  font-size:    clamp(1rem, 2vmin , 1.25rem);
+  line-height:  clamp(1.25rem, 2vmin , 1.5rem);
 `
 export const Box= styled.div`
   width:          100%;
@@ -108,11 +107,11 @@ export const Button = styled.button.attrs(props => ({
                  
 }))`
 ${  props => prepareButton                              }
-${  props => props.type === 'outline' && outlineButton  }
-${  props => props.type === 'text'    && textButton     }
-${  props => props.type === 'button'  && buttonButton   }
+${  props => props.styleType === 'outline' && outlineButton  }
+${  props => props.styleType === 'text'    && textButton     }
+${  props => props.styleType === 'button'  && buttonButton   }
 `
-export const GatsbyButton = styled(Link).attrs(props => ({
+export const GatsbyButton = styled(AniLink).attrs(props => ({
   bg_color  : props.variant 
                 ? props.theme.colors[props.variant] 
                 : props.theme.colors.neutral,
@@ -125,9 +124,9 @@ export const GatsbyButton = styled(Link).attrs(props => ({
 }))`
 text-decoration: none;
 ${  props => prepareButton                            }
-${  props => props.type === 'outline' && outlineButton}
-${  props => props.type === 'text'    && textButton   }
-${  props => props.type === 'button'  && buttonButton }
+${  props => props.styleType === 'outline' && outlineButton}
+${  props => props.styleType === 'text'    && textButton   }
+${  props => props.styleType === 'button'  && buttonButton }
 
 &:hover, &:focus {  text-decoration: underline; }`
 
@@ -143,7 +142,7 @@ export const ExternalLink = styled.a`
   &:hover   {  color: ${props => props.theme.colors[props.variant][6].CSS};  }
   &:active  {  color: ${props => props.theme.colors[props.variant][2].CSS};  }
 `
-export const GatsbyStyledLink = styled(Link)`
+export const GatsbyStyledLink = styled(AniLink)`
   color: ${props => props.theme.colors[props.variant][5].CSS};
 
   &:link    {  color: ${props => props.theme.colors[props.variant][5].CSS};  }

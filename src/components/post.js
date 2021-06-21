@@ -1,6 +1,7 @@
 import React  from 'react'
 import styled from 'styled-components'
 import {  Link                    } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import {  GatsbyImage, getImage   } from 'gatsby-plugin-image'
 import {  Box, Header, Paragraph  } from '../components/primatives'
 
@@ -65,7 +66,7 @@ const Excerpt = styled(Paragraph)`
   padding-right:  1.5rem;
   margin-left:    1rem;
 `
-const PostLink = styled(Link)`
+const PostLink = styled(AniLink)`
   display:          flex;  
   width:            100%;
   height:           100%;
@@ -125,7 +126,7 @@ export default function Post(props) {
   return (
     <>
         <PostWrapper key  = { id  } >
-          <PostLink to    = { fields.slug } > 
+          <PostLink to    = { fields.slug } paintDrip duration={0.65} hex='#55CDFC' > 
           { frontmatter 
             && frontmatter.cover 
               ? ( <ImgContainer>

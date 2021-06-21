@@ -69,12 +69,12 @@ const column = {
 };
 
 const borderRadius = {
-  xs: '0.25rem',
-  sm: '0.5rem',
-  md: '1rem',
-  lg: '2rem',
-  xl: '4rem',
-  pill: '50rem',
+  xs:     '0.25rem',
+  sm:     '0.5rem',
+  md:     '1rem',
+  lg:     '2rem',
+  xl:     '4rem',
+  pill:   '50rem',
   circle: '50%'
 }
 
@@ -145,14 +145,14 @@ const zIndex = {
 }
 const TransTheme = {
   colors: {
-    primary: Colors.Primary.monochromatic,
-    warning: Colors.Warning.monochromatic, 
-    danger: Colors.Danger.monochromatic, 
-    success: Colors.Success.monochromatic, 
-    info: Colors.Info.monochromatic, 
-    neutral: Colors.Neutral.monochromatic,
-    main_bg: Colors.Neutral.monochromatic[2],
-    main_fg: Colors.Neutral.monochromatic[9],    
+    primary:  Colors.Primary.monochromatic,
+    warning:  Colors.Warning.monochromatic, 
+    danger:   Colors.Danger.monochromatic, 
+    success:  Colors.Success.monochromatic, 
+    info:     Colors.Info.monochromatic, 
+    neutral:  Colors.Neutral.monochromatic,
+    main_bg:  Colors.Neutral.monochromatic[2],
+    main_fg:  Colors.Neutral.monochromatic[9],    
   } ,
   font_sans_serif: font,
   font_monospace: mono,

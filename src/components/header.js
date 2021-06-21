@@ -2,7 +2,7 @@ import React                from 'react'
 import styled               from 'styled-components'
 import { Link }             from 'gatsby'
 import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome'
-
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import Logo                             from '../images/logo.png'
 import { NavBar                       } from './navbar'
 import { Box, makeFlex, ExternalLink  } from '../components/primatives'
@@ -15,7 +15,7 @@ const StyledHeader = styled(Box)`
 
   ${props => props.theme.media.md}{ align-items: flex-end;}
 `
-const LogoLink = styled(Link)`
+const LogoLink = styled(AniLink)`
   padding-left:   1rem;
   padding-right:  1rem;
   padding-top:    0.5rem;
@@ -76,7 +76,7 @@ export const Header = ({ siteTitle, siteDescription }) => {
   return (
     <>
     <StyledHeader as  = 'header'> 
-          <LogoLink to  = "/">
+          <LogoLink to  = "/" cover direction='down' bg='#55CDFC'>
             <LogoBlock />
           </LogoLink>
           <SocialContainer>

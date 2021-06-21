@@ -30,7 +30,7 @@ const SubSectionUL = styled.ul`
     ${props => props.theme.media.sm}{
       margin-left: 2rem;
       margin-top: 0.25rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: 1rem;
     }
   }
 `
@@ -62,9 +62,9 @@ export default function SectionList({ postItems }) {
                                 { listSections[tag][subtag].map((item, index) => {
                                     return (
                                       <li key={index}><span> {item.frontmatter.extra} </span> 
-                                        <GatsbyButton 
+                                        <GatsbyButton paintDrip direction='down' hex='#55CDFC' duration={0.65}
                                           to={item.fields.slug}
-                                          type='text'
+                                          styleType='text'
                                           variant ='info'>
                                             {item.frontmatter.title}
                                           </GatsbyButton>
